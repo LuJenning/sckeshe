@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: scproduct
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/scshop?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123456
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
+mybatis:
+  mapper-locations: classpath*:mapping/*Mapper.xml
+  type-aliases-package: com.product.base.ljn.entity
+server:
+  port: 9091
+#hystrix的超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+feign:
+  hystrix:
+    enabled: true

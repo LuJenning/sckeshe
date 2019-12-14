@@ -1,0 +1,50 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" th:src="@{/third/jquery/jquery-3.3.1.js}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="text/javascript" th:src="@{/login/js/jquery.min.js}"></script>
+<link th:href="@{/login/css/style.css}" rel="stylesheet" type="text/css" media="all" />
+<title>登录</title>
+<script>
+$(document).ready(function(c) {
+	$('.alert-close').on('click', function(c){
+		$('.message').fadeOut('slow', function(c){
+	  		$('.message').remove();
+		});
+	});	  
+});
+</script>
+
+</head>
+<body>
+
+<div class="message warning">
+	<div class="inset">
+		<div class="login-head">
+			<h1>用户登录</h1>
+		</div>
+		<form action="/login" method="get">
+			<ul>
+				<li><input name="username" type="text" class="text" value="admin"><a href="#" class=" icon user"></a></li>
+				<li><input name="password" type="password" value="123"/> <a href="#" class="icon lock"></a></li>
+			</ul>
+			<div class="submit">
+				<input type="submit" value="登录"/>
+				<h4><a href="#">忘记密码?</a></h4>
+				<div class="clear"></div>
+			</div>
+		</form>
+	</div>					
+</div>
+
+<!--- footer --->
+<div class="footer">
+	<p>Copyright &copy; 2019.</p>
+</div>
+
+<div style="text-align:center;">
+</div>
+</body>
+</html>

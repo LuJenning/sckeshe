@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hystrix-dashboard
+server:
+  port: 8030
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/

@@ -1,0 +1,53 @@
+spring:
+  application:
+    name: scorder
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/scshop?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123456
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
+mybatis:
+  mapper-locations: classpath*:mapping/*Mapper.xml
+  type-aliases-package: com.order.base.ljn.entity
+server:
+  port: 9092
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["health","info","hystrix.stream"]
+#hystrix的超时时间
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000
+feign:
+  hystrix:
+    enabled: true
+# 使用sleuth
+#logging:
+#  level:
+#    org.springframework.cloud.openfeign: debug
+#    org.springframework.cloud.sleuth: debug
+  zipkin:
+    base-url: http://localhost:9411/  # zipkin服务器的地址
+    # 关闭服务发现，否则Spring Cloud会把zipkin的url当做服务名称
+    discoveryClientEnabled: false
+    sender:
+      type: web  # 设置使用http的方式传输数据
+    sleuth:
+      sampler:
+        probability: 1  # 设置抽样采集率为100%，默认为0.1，即10%

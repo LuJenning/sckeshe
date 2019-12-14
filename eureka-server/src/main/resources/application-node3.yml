@@ -1,0 +1,31 @@
+server:
+  port: 8763
+
+spring:
+  application:
+    name: eureka-server-node3
+
+eureka:
+  instance:
+    hostname: node3
+    #不使用主机名来定义注册中心的地址, 而使用IP地址的形式,
+    #如果设置了ipAddress 属性, 则使用该属性配置的IP, 否则自动获取除环路IP外的第一个IP地址
+    preferIpAddress: true  #自动将IP注册到Eureka Server上, 如果不配置就是机器的主机名
+    #ipAddress: 192.168.1.128 # IP地址
+    #将Instance ID设置成IP:端口的形式
+    instance-id: ${spring.application.name}:${server.port}
+    #注意：更改Eureka更新频率将打破服务器的自我保护功能, 生产环境下不建议自定义这些配置。
+    lease-expiration-duration-in-seconds: 30 #续约到期时间(默认90秒)
+    lease-renewal-interval-in-seconds: 10    #续约更新时间间隔(默认30秒)
+    #prefer-ip-address: true
+  client:
+    #向注册中心注册本服务实例
+    register-with-eureka: true
+    #检索并维护注册中心服务实例
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
+    waitTimeInMsWhenSyncEmpty: 0

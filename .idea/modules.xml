@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/hystrix-dashboard/hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order-base/order-base.iml" filepath="$PROJECT_DIR$/order/order-base/order-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order-client/order-client.iml" filepath="$PROJECT_DIR$/order/order-client/order-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order-server/order-server.iml" filepath="$PROJECT_DIR$/order/order-server/order-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product/product.iml" filepath="$PROJECT_DIR$/product/product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product/product-base/product-base.iml" filepath="$PROJECT_DIR$/product/product-base/product-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product/product-client/product-client.iml" filepath="$PROJECT_DIR$/product/product-client/product-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/product/product-server/product-server.iml" filepath="$PROJECT_DIR$/product/product-server/product-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sckeshe.iml" filepath="$PROJECT_DIR$/sckeshe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sleuth-zipkin/sleuth-zipkin.iml" filepath="$PROJECT_DIR$/sleuth-zipkin/sleuth-zipkin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user-client/user-client.iml" filepath="$PROJECT_DIR$/user/user-client/user-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user-server/user-server.iml" filepath="$PROJECT_DIR$/user/user-server/user-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
+    </modules>
+  </component>
+</project>

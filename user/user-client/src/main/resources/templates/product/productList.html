@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" type="text/css" th:href="@{/third/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{/third/jquery/jquery-3.3.1.js}"></script>
+    <script type="text/javascript" th:src="@{/third/layui/layui.js}"></script>
+    <meta charset="UTF-8">
+    <title>商品列表</title>
+</head>
+<body>
+<div>
+    <div>
+        <table border="1">
+            <tr>
+                <th>序号</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品描述</th>
+                <th>商品库存</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="sys,iterStat : ${sysProductInfoList}">
+                <td th:text="${iterStat.count}"></td>
+                <td th:text="${sys.productName}"></td>
+                <td th:text="${sys.productPrice}"></td>
+                <td th:text="${sys.productDescription}"></td>
+                <td th:text="${sys.productStock}"></td>
+                <td><a href="javascript:;" id="buy" class="toBuy" th:name="${sys.productName}" th:foole="${sys.productId}">买它</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    layui.use(['layer'], function() {
+        var table = layui.table,layer = layui.layer;
+        $(document).on('click','.toBuy',function () {
+            var foole = $(this).attr("foole");
+            var name = $(this).attr("name");
+            layer.prompt({title: name + '请输入购买数量，并确认'}, function(text, index){
+                layer.close(index);
+                console.log(foole)
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:9092/create/order",
+                    data: {
+                        productId: foole,
+                        productNum: text
+                    },
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        if (data.code == 200) {
+                            layer.msg("下单成功")
+                        } else {
+                            alert(data.resMsg);
+                        }
+                    }
+                })
+            });
+        });
+    });
+</script>
+</html>

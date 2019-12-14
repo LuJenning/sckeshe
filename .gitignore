@@ -1,0 +1,14 @@
+# Project exclude paths
+/base/target/
+/config-server/target/
+/hystrix-dashboard/target/
+/order/order-base/target/
+/order/order-client/target/
+/order/order-server/target/
+/product/product-base/target/
+/product/product-client/target/
+/product/product-server/target/
+/turbine/target/
+/user/user-client/target/
+/user/user-server/target/
+/zuul/target/

@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: zuul
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG
+      profile: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
+zuul:
+  routes:
+  # /myProduct/product/list -> /product/product/list
+    routeOne:
+      path: /order/**
+      serviceId: scorder
+      sensitiveHeaders:
+  #简洁写法
+#    product: /myProduct/**
+  #排除某些路由
+  ignored-patterns:
+    - /**/product/listForOrder
+management:
+  security:
+    enabled: false
+server:
+  port: 8090

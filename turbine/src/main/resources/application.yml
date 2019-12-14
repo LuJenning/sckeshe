@@ -1,0 +1,14 @@
+server:
+  port: 8040
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
+spring:
+  application:
+    name: turbine-server
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig: scorder,user-client,scproduct
+  clusterNameExpression: new String("default")

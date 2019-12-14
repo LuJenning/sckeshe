@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/TechLjn/spring-config-repo
+          username: 2376571392@qq.com
+          password: 6Ljn19970928
+eureka:
+  client:
+    service-url:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
+management:
+  endpoints:
+    web:
+      expose: "*"
+server:
+  port: 8974

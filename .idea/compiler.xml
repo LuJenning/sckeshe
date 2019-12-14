@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
+        <module name="turbine" />
+        <module name="order-client" />
+        <module name="user-client" />
+        <module name="product-base" />
+        <module name="product" />
+        <module name="product-client" />
+        <module name="zuul" />
+        <module name="order-base" />
+        <module name="order-server" />
+        <module name="user-server" />
+        <module name="sleuth-zipkin" />
+        <module name="eureka-server" />
+        <module name="product-server" />
+        <module name="user" />
+        <module name="hystrix-dashboard" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="base" target="1.8" />
+      <module name="config-server" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="hystrix-dashboard" target="1.8" />
+      <module name="order" target="1.8" />
+      <module name="order-base" target="1.8" />
+      <module name="order-client" target="1.8" />
+      <module name="order-server" target="1.8" />
+      <module name="product" target="1.8" />
+      <module name="product-base" target="1.8" />
+      <module name="product-client" target="1.8" />
+      <module name="product-server" target="1.8" />
+      <module name="sckeshe" target="1.8" />
+      <module name="sleuth-zipkin" target="1.8" />
+      <module name="turbine" target="1.8" />
+      <module name="user" target="1.8" />
+      <module name="user-client" target="1.8" />
+      <module name="user-server" target="1.8" />
+      <module name="zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="base" options="" />
+      <module name="config-server" options="-parameters" />
+      <module name="eureka-server" options="-parameters" />
+      <module name="hystrix-dashboard" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="order-base" options="-parameters" />
+      <module name="order-client" options="-parameters" />
+      <module name="order-server" options="-parameters" />
+      <module name="product" options="-parameters" />
+      <module name="product-base" options="-parameters" />
+      <module name="product-client" options="-parameters" />
+      <module name="product-server" options="-parameters" />
+      <module name="sckeshe" options="-parameters" />
+      <module name="sleuth-zipkin" options="-parameters" />
+      <module name="turbine" options="-parameters" />
+      <module name="user" options="-parameters" />
+      <module name="user-client" options="-parameters" />
+      <module name="user-server" options="-parameters" />
+      <module name="zuul" options="-parameters" />
+    </option>
+  </component>
+</project>
