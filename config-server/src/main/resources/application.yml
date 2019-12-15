@@ -6,8 +6,8 @@ spring:
       server:
         git:
           uri: https://gitee.com/TechLjn/spring-config-repo
-          username: 2376571392@qq.com
-          password: 6Ljn19970928
+          username: 123456
+          password: 123456
 eureka:
   client:
     service-url:
