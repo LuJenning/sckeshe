@@ -38,4 +38,9 @@ public class ProductServiceImpl implements IProductService {
         return mapper.selectStockByProductId(productId);
     }
 
+    @Override
+    public SysProductInfo getProductInfoNyProductId(String productId) {
+        return mapper.findProductByProductId(productId);
+    }
+
 }

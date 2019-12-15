@@ -21,6 +21,12 @@ public class ProductController {
         return productService.getProductList();
     }
 
+    @RequestMapping(value = "/product/productInfo",method = RequestMethod.GET)
+    SysProductInfo getProductInfoNyProductId(@RequestParam("id") String id){
+        log.info("sysProductInfo :{}",id);
+        return productService.getProductInfoNyProductId(id);
+    }
+
     @RequestMapping(value = "/product/list",method = RequestMethod.POST)
     public SysProductInfo getList(@RequestBody ProductDTO productDTO){
         SysProductInfo sysProductInfo = productService.getProduct(productDTO.getProductId());

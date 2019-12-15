@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <link rel="stylesheet" type="text/css" th:href="@{/third/layui/css/layui.css}">
     <script type="text/javascript" th:src="@{/third/jquery/jquery-3.3.1.js}"></script>
     <script type="text/javascript" th:src="@{/third/layui/layui.js}"></script>
     <meta charset="UTF-8">
     <title>商品列表</title>
 </head>
+<style type="text/css">
+    table.gridtable {
+        font-family: verdana,arial,sans-serif;
+        font-size:11px;
+        color:#333333;
+        border-width: 1px;
+        border-color: #666666;
+        border-collapse: collapse;
+    }
+    table.gridtable th {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #dedede;
+    }
+    table.gridtable td {
+        border-width: 1px;
+        padding: 8px;
+        border-style: solid;
+        border-color: #666666;
+        background-color: #ffffff;
+    }
+</style>
 <body>
 <div>
     <div>
-        <table border="1">
+        <table class="gridtable">
             <tr>
                 <th>序号</th>
                 <th>商品名称</th>
@@ -36,30 +59,47 @@
     layui.use(['layer'], function() {
         var table = layui.table,layer = layui.layer;
         $(document).on('click','.toBuy',function () {
-            var foole = $(this).attr("foole");
             var name = $(this).attr("name");
-            layer.prompt({title: name + '请输入购买数量，并确认'}, function(text, index){
-                layer.close(index);
-                console.log(foole)
-                $.ajax({
-                    type: "POST",
-                    url: "http://localhost:9092/create/order",
-                    data: {
-                        productId: foole,
-                        productNum: text
-                    },
-                    dataType: "json",
-                    success: function (data) {
-                        console.log(data)
-                        if (data.code == 200) {
-                            layer.msg("下单成功")
-                        } else {
-                            alert(data.resMsg);
-                        }
-                    }
-                })
+            var foole = $(this).attr("foole");
+            layer.open({
+                type:2,
+                area:['55%','88%'],
+                title:'商品详情',
+                maxmin: true,
+                shade: 0.5,
+                content:"/product/productInfo?id=" + foole,
+                success:function (d) {}
             });
         });
     });
+
+
+
+    /*layer.prompt({title: name + '请输入购买数量，并确认'}, function(text, index){
+        layer.close(index);
+        console.log(foole)
+        setTimeout(function () {
+            layer.msg("正在处理，请稍后...")
+        },1500);
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:9092/create/order",
+            data: {
+                productId: foole,
+                productNum: text
+            },
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                if (data.code == 200) {
+                    layer.msg("下单成功")
+                    setTimeout(function () {},2000);
+                    window.location.reload();
+                } else {
+                    layer.msg("下单失败")
+                }
+            }
+        })
+    });*/
 </script>
 </html>

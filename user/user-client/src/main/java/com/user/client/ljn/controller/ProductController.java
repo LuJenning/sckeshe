@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Slf4j
@@ -27,6 +28,16 @@ public class ProductController {
         log.info("sysProductInfoList:{}",sysProductInfoList);
         model.addAttribute("sysProductInfoList",sysProductInfoList);
         return new ModelAndView("/product/productList");
+    }
+
+    @RequestMapping(value = "/product/productInfo",method = RequestMethod.GET)
+    public ModelAndView productInfo(HttpServletRequest req,Model model){
+        String id = req.getParameter("id");
+        log.info("id:{}",id);
+        SysProductInfo sysProductInfo2 = userFeign.getProductInfoNyProductId(id);
+        log.info("sysProductInfo 35 line:{}",sysProductInfo2);
+        model.addAttribute("sysProductInfo",sysProductInfo2);
+        return new ModelAndView("/product/productDetail");
     }
 
     //TODO

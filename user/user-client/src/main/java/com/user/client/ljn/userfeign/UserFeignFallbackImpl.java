@@ -9,7 +9,6 @@ import java.util.List;
 @Component
 public class UserFeignFallbackImpl implements UserFeign {
 
-
     @Override
     public List<SysProductInfo> getProductList() {
         return null;
@@ -19,4 +18,10 @@ public class UserFeignFallbackImpl implements UserFeign {
     public void createProduct(ProductDTO productDTO) {
 
     }
+
+    @Override
+    public SysProductInfo getProductInfoNyProductId(String id) {
+        return null;
+    }
+
 }

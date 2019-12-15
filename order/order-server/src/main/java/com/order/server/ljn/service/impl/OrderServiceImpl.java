@@ -38,7 +38,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
-    public void create(ProductDTO productDTO) {
+    public SysOrderMaster create(ProductDTO productDTO) {
         String orderId = KeyUtil.genUniqueKey();
         //调用商品服务查询出商品
         SysProductInfo sysProductInfo = productClient.getList(productDTO);
@@ -66,5 +66,6 @@ public class OrderServiceImpl implements IOrderService {
         orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
         orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
         masterMapper.saveMaster(orderMaster);
+        return orderMaster;
     }
 }

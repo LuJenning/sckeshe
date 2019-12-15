@@ -14,4 +14,6 @@ public interface IProductService {
     void decreaseStock(int stock,String productId);
 
     int selectStockByProductId(String productId);
+
+    SysProductInfo getProductInfoNyProductId(String productId);
 }

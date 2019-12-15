@@ -10,5 +10,5 @@ public interface IOrderService {
     //保存订单主内容
     void saveOrderMaster(SysOrderMaster orderMaster);
     //创建订单
-    void create(ProductDTO productDTO);
+    SysOrderMaster create(ProductDTO productDTO);
 }

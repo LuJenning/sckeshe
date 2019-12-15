@@ -6,6 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -13,9 +14,11 @@ import java.util.List;
 public interface UserFeign {
 
     @RequestMapping(value = "/server/productList",method = RequestMethod.GET)
-    List<SysProductInfo>  getProductList();
+    List<SysProductInfo> getProductList();
 
     @RequestMapping(value = "/product/buy",method = RequestMethod.POST)
     void createProduct(@RequestBody ProductDTO productDTO);
 
+    @RequestMapping(value = "/product/productInfo",method = RequestMethod.GET)
+    SysProductInfo getProductInfoNyProductId(@RequestParam("id") String id);
 }
