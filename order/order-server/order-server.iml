@@ -25,6 +25,7 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="user-common" />
     <orderEntry type="module" module-name="order-client" />
     <orderEntry type="module" module-name="product-client" />
     <orderEntry type="module" module-name="product-base" />

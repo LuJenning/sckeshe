@@ -1,7 +1,7 @@
 package com.user.client.ljn.userfeign;
 
 import com.base.ljn.dto.ProductDTO;
-import com.user.server.ljn.entity.SysProductInfo;
+import com.user.common.usercommon.entity.SysProductInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

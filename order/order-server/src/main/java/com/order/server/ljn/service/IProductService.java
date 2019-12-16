@@ -1,6 +1,6 @@
 package com.order.server.ljn.service;
 
-import com.order.base.ljn.entity.SysProductInfo;
+import com.user.common.usercommon.entity.SysProductInfo;
 
 import java.util.List;
 

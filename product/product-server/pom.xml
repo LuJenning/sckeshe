@@ -24,6 +24,11 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
+            <groupId>com.user.common</groupId>
+            <artifactId>user-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.sckeshe.base.ljn</groupId>
             <artifactId>base</artifactId>
             <version>0.0.1-SNAPSHOT</version>

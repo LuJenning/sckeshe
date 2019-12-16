@@ -10,5 +10,5 @@ spring:
 turbine:
   aggregator:
     clusterConfig: default
-  appConfig: scorder,user-client,scproduct
+  appConfig: scorder
   clusterNameExpression: new String("default")

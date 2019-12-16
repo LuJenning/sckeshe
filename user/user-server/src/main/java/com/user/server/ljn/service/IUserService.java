@@ -1,6 +1,6 @@
 package com.user.server.ljn.service;
 
-import com.user.server.ljn.entity.SysUserInfo;
+import com.user.common.usercommon.entity.SysUserInfo;
 
 public interface IUserService {
 

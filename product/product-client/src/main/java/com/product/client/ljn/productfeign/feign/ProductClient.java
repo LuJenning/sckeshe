@@ -2,8 +2,8 @@ package com.product.client.ljn.productfeign.feign;
 
 import com.base.ljn.dto.BuyProductDTO;
 import com.base.ljn.dto.ProductDTO;
-import com.product.base.ljn.entity.SysProductInfo;
 import com.product.client.ljn.productfeign.fallback.ProductClientFallback;
+import com.user.common.usercommon.entity.SysProductInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

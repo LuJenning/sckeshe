@@ -20,7 +20,7 @@ eureka:
       defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
 mybatis:
   mapper-locations: classpath*:mapping/*Mapper.xml
-  type-aliases-package: com.user.server.ljn.entity
+  type-aliases-package: com.user.common.usercommon.entity
 server:
   port: 9090
 #hystrix的超时时间
@@ -37,3 +37,6 @@ hystrix:
 ribbon:
   ReadTimeout: 30000
   ConnectTimeout: 30000
+feign:
+  hystrix:
+    enabled: true

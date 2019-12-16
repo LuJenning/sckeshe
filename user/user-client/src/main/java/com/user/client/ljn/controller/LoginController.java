@@ -1,6 +1,6 @@
 package com.user.client.ljn.controller;
 
-import com.user.server.ljn.entity.SysUserInfo;
+import com.user.common.usercommon.entity.SysUserInfo;
 import com.user.server.ljn.service.IUserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

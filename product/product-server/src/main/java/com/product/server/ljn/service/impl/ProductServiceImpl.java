@@ -1,14 +1,12 @@
 package com.product.server.ljn.service.impl;
 
-import com.base.ljn.dto.ProductDTO;
-import com.product.base.ljn.entity.SysProductInfo;
 import com.product.server.ljn.dao.SysProductInfoMapper;
 import com.product.server.ljn.service.IProductService;
+import com.user.common.usercommon.entity.SysProductInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigInteger;
 import java.util.List;
 
 @Service("productService")

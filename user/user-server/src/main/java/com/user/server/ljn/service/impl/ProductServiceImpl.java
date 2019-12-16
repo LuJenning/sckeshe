@@ -1,9 +1,8 @@
 package com.user.server.ljn.service.impl;
 
 
-import com.base.ljn.dto.ProductDTO;
+import com.user.common.usercommon.entity.SysProductInfo;
 import com.user.server.ljn.dao.SysProductInfoMapper;
-import com.user.server.ljn.entity.SysProductInfo;
 import com.user.server.ljn.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

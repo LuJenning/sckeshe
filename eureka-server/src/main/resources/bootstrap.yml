@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: eureka-server
+
+---
+spring:
+  profiles: eureka-server1
+server:
+  port: 8761
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    hostname: jnick.xyz
+    prefer-ip-address: true
+
+---
+spring:
+  profiles: eureka-server2
+server:
+  port: 8762
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8763/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    hostname: jnick.xyz
+    prefer-ip-address: true
+
+---
+spring:
+  profiles: eureka-server3
+server:
+  port: 8763
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    hostname: jnick.xyz
+    prefer-ip-address: true

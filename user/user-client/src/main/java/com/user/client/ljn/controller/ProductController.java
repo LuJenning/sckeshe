@@ -1,7 +1,7 @@
 package com.user.client.ljn.controller;
 
 import com.user.client.ljn.userfeign.UserFeign;
-import com.user.server.ljn.entity.SysProductInfo;
+import com.user.common.usercommon.entity.SysProductInfo;
 import com.user.server.ljn.service.IProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

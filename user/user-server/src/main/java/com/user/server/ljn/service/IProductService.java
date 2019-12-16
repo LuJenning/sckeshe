@@ -1,7 +1,6 @@
 package com.user.server.ljn.service;
 
-import com.base.ljn.dto.ProductDTO;
-import com.user.server.ljn.entity.SysProductInfo;
+import com.user.common.usercommon.entity.SysProductInfo;
 
 import java.util.List;
 

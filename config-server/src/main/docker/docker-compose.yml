@@ -1,0 +1,8 @@
+version: '2'
+services:
+  springcloud-config:
+    restart: always
+    image: config-server
+    container_name: config-server
+    ports:
+      - 8974:8974

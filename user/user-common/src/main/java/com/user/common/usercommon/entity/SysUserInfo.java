@@ -1,9 +1,10 @@
-package com.user.server.ljn.entity;
+package com.user.common.usercommon.entity;
 
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+
 @Data
 public class SysUserInfo implements Serializable {
     private String id;

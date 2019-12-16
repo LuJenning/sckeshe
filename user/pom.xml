@@ -18,6 +18,7 @@
     <modules>
         <module>user-client</module>
         <module>user-server</module>
+        <module>user-common</module>
     </modules>
 
     <properties>

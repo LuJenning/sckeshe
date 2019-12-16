@@ -1,8 +1,9 @@
-package com.product.base.ljn.entity;
+package com.user.common.usercommon.entity;
+
+import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Date;
 
 public class SysProductInfo implements Serializable {
@@ -109,7 +110,7 @@ public class SysProductInfo implements Serializable {
     @Override
     public String toString() {
         return "SysProductInfo{" +
-                "productId=" + productId +
+                "productId='" + productId + '\'' +
                 ", productName='" + productName + '\'' +
                 ", productPrice=" + productPrice +
                 ", productStock=" + productStock +

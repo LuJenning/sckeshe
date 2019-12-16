@@ -22,11 +22,14 @@
         <option value="$PROJECT_DIR$/hystrix-dashboard/pom.xml" />
         <option value="$PROJECT_DIR$/turbine/pom.xml" />
         <option value="$PROJECT_DIR$/sleuth-zipkin/pom.xml" />
+        <option value="$PROJECT_DIR$/user/user-base/pom.xml" />
+        <option value="$PROJECT_DIR$/user/user-common/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/user/pom.xml" />
+        <option value="$PROJECT_DIR$/user/user-base/pom.xml" />
       </set>
     </option>
   </component>

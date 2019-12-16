@@ -34,7 +34,7 @@
 <body>
 <div>
     <div>
-
+        <span></span>
         <span>商品名:</span>
         <span th:text="${sysProductInfo.productName}"></span>
         <span>商品价格:</span>
@@ -43,10 +43,10 @@
         <div>
             <span>购买数量:</span><input class="sdddq" value="0" disabled="disabled" id="inp"
                    style="border-style: none; border-width: 0px; width: 86px; text-align: center; outline: none; vertical-align: middle; line-height: 30px;">
-            <span>库存量:</span><span th:text="${sysProductInfo.productStock}"></span>
+            （<span>库存量:</span><span th:text="${sysProductInfo.productStock}"></span>）
         </div>
         <div>
-            <button type="button" id="buy" class="layui-btn">确认购买</button>
+            <button type="button" id="buy" class="layui-btn layui-btn-primary">立即购买</button>
             <button type="button" class="layui-btn layui-btn-danger">加入购物车</button>
         </div>
     </div>
@@ -86,7 +86,8 @@
                     if (data.code == 200) {
                         layer.msg("下单成功")
                         setTimeout(function () {},2000);
-                        window.location.reload();
+
+                        //window.location.reload();
                     } else {
                         layer.msg("下单失败")
                     }

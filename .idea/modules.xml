@@ -19,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/turbine/turbine.iml" filepath="$PROJECT_DIR$/turbine/turbine.iml" />
       <module fileurl="file://$PROJECT_DIR$/user/user.iml" filepath="$PROJECT_DIR$/user/user.iml" />
       <module fileurl="file://$PROJECT_DIR$/user/user-client/user-client.iml" filepath="$PROJECT_DIR$/user/user-client/user-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/user/user-common/user-common.iml" filepath="$PROJECT_DIR$/user/user-common/user-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/user/user-server/user-server.iml" filepath="$PROJECT_DIR$/user/user-server/user-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
     </modules>

@@ -1,6 +1,6 @@
 package com.order.server.ljn.dao;
 
-import com.order.base.ljn.entity.SysProductInfo;
+import com.user.common.usercommon.entity.SysProductInfo;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

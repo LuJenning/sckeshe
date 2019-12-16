@@ -7,9 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="config-server" />
+        <module name="user" />
         <module name="turbine" />
-        <module name="order-client" />
         <module name="user-client" />
+        <module name="order-client" />
         <module name="product-base" />
         <module name="product" />
         <module name="product-client" />
@@ -17,10 +18,9 @@
         <module name="order-base" />
         <module name="order-server" />
         <module name="user-server" />
-        <module name="sleuth-zipkin" />
         <module name="eureka-server" />
         <module name="product-server" />
-        <module name="user" />
+        <module name="sleuth-zipkin" />
         <module name="hystrix-dashboard" />
       </profile>
     </annotationProcessing>
@@ -41,7 +41,11 @@
       <module name="sleuth-zipkin" target="1.8" />
       <module name="turbine" target="1.8" />
       <module name="user" target="1.8" />
+      <module name="user-base" target="1.8" />
+      <module name="user-base (1)" target="1.8" />
+      <module name="user-base (2)" target="1.8" />
       <module name="user-client" target="1.8" />
+      <module name="user-common" target="1.8" />
       <module name="user-server" target="1.8" />
       <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
@@ -64,7 +68,10 @@
       <module name="sleuth-zipkin" options="-parameters" />
       <module name="turbine" options="-parameters" />
       <module name="user" options="-parameters" />
+      <module name="user-base" options="-parameters" />
+      <module name="user-base (2)" options="-parameters" />
       <module name="user-client" options="-parameters" />
+      <module name="user-common" options="-parameters" />
       <module name="user-server" options="-parameters" />
       <module name="zuul" options="-parameters" />
     </option>

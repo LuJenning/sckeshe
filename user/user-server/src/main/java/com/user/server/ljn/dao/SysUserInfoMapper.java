@@ -1,6 +1,6 @@
 package com.user.server.ljn.dao;
 
-import com.user.server.ljn.entity.SysUserInfo;
+import com.user.common.usercommon.entity.SysUserInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

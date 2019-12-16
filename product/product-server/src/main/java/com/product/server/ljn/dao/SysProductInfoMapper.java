@@ -1,10 +1,8 @@
 package com.product.server.ljn.dao;
 
-import com.base.ljn.dto.ProductDTO;
-import com.product.base.ljn.entity.SysProductInfo;
+import com.user.common.usercommon.entity.SysProductInfo;
 import org.apache.ibatis.annotations.Param;
 
-import java.math.BigInteger;
 import java.util.List;
 
 public interface SysProductInfoMapper {

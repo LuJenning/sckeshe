@@ -23,6 +23,9 @@
         <module>zuul</module>
         <module>config-server</module>
         <module>base</module>
+        <module>hystrix-dashboard</module>
+        <module>sleuth-zipkin</module>
+        <module>turbine</module>
     </modules>
 
     <properties>

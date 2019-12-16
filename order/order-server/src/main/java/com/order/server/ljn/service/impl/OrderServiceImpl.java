@@ -9,8 +9,8 @@ import com.order.base.ljn.utils.KeyUtil;
 import com.order.server.ljn.dao.SysOrderDetailMapper;
 import com.order.server.ljn.dao.SysOrderMasterMapper;
 import com.order.server.ljn.service.IOrderService;
-import com.product.base.ljn.entity.SysProductInfo;
 import com.product.client.ljn.productfeign.feign.ProductClient;
+import com.user.common.usercommon.entity.SysProductInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

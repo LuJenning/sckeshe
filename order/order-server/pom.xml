@@ -16,6 +16,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.user.common</groupId>
+            <artifactId>user-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.order.client.ljn</groupId>
             <artifactId>order-client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
