@@ -2,6 +2,8 @@ package com.product.server.ljn.dao;
 
 import com.product.base.ljn.entity.SysProductCategoryInfo;
 
+import java.util.List;
+
 public interface SysProductCategoryInfoMapper {
     int deleteByPrimaryKey(Integer categoryId);
 
@@ -14,4 +16,6 @@ public interface SysProductCategoryInfoMapper {
     int updateByPrimaryKeySelective(SysProductCategoryInfo record);
 
     int updateByPrimaryKey(SysProductCategoryInfo record);
+
+    List<SysProductCategoryInfo> findCategoryList();
 }

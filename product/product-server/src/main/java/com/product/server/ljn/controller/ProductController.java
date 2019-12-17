@@ -1,6 +1,8 @@
 package com.product.server.ljn.controller;
 
 import com.base.ljn.dto.ProductDTO;
+import com.product.base.ljn.entity.SysProductCategoryInfo;
+import com.product.server.ljn.service.ICategoryService;
 import com.product.server.ljn.service.IProductService;
 import com.user.common.usercommon.entity.SysProductInfo;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +17,8 @@ public class ProductController {
 
     @Autowired
     private IProductService productService;
+    @Autowired
+    private ICategoryService categoryService;
 
     @RequestMapping(value = "/server/productList",method = RequestMethod.GET)
     public List<SysProductInfo> getProductList(){
@@ -40,5 +44,14 @@ public class ProductController {
         productService.decreaseStock(stock,productDTO.getProductId());
     }
 
+    @RequestMapping(value = "/addProduct",method = RequestMethod.POST)
+    int addProduct(@RequestBody SysProductInfo sysProductInfo){
+        return productService.addProduct(sysProductInfo);
+    }
+
+    @RequestMapping(value = "/getCategory",method = RequestMethod.POST)
+    List<SysProductCategoryInfo> findCategoryList(){
+        return categoryService.findCategoryList();
+    }
 
 }

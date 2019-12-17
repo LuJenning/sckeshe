@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/third/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/third/font-awesome/css/font-awesome.min.css}">
+    <script type="text/javascript" th:src="@{/third/jquery/jquery-3.3.1.js}"></script>
+    <script th:src="@{/third/layui/layui.js}"></script>
+    <title>Title</title>
+</head>
+<body>
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">类目名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="categoryName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">类目类型</label>
+        <div class="layui-input-inline">
+            <input type="text" name="categoryType" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+</form>
+</body>
+</html>

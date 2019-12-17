@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/third/layui/css/layui.css}">
+    <link rel="stylesheet" th:href="@{/third/font-awesome/css/font-awesome.min.css}">
+    <script type="text/javascript" th:src="@{/third/jquery/jquery-3.3.1.js}"></script>
+    <script th:src="@{/third/layui/layui.js}"></script>
+    <title>添加商品</title>
+</head>
+<body>
+<form class="layui-form" action="" enctype="multipart/form-data">
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="productName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品描述</label>
+        <div class="layui-input-inline">
+            <input type="text" name="productDescription" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品价格</label>
+        <div class="layui-input-inline">
+            <input type="text" name="productPrice" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品库存</label>
+        <div class="layui-input-inline">
+            <input type="text" name="productStock" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品类别</label>
+        <div class="layui-input-block" >
+            <input type="radio" th:each="list : ${list}" th:value="${list.categoryId}" name="rname" th:title="${list.categoryName}">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">商品图片</label>
+        <div class="layui-input-block" >
+            <button type="button" class="layui-btn" id="upload">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+        </div>
+    </div>
+    <input type="hidden" id="hiddenImg" value="">
+
+    <div class="layui-form-item">
+        <div class="layui-input-block" >
+            <span id="previewPhoto">
+               <!-- <img id="img" style="width:140px;height:140px;">-->
+            </span>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <button class="layui-btn" lay-submit="" lay-filter="submit">跳转式提交</button>
+    </div>
+
+</form>
+<script type="text/javascript">
+    layui.use(['form','layer','layedit','upload'], function() {
+        var form = layui.form,layer = layui.layer,layedit = layui.layedit, upload = layui.upload;
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#upload' //绑定元素
+            ,url: '/uploadImg' //上传接口
+            ,method:'POST'
+            ,size: '1024*5'
+            ,choose: function (obj) {
+                obj.preview(function(index,file,result) {
+                    $('#previewPhoto').append('<img src="' + result +'" alt ="' + file.name + '" style = width:140px;height:140px>')
+                });
+            },done: function(res){
+                console.log(res)
+                //如果上传失败
+                if (res.code != 0) {
+                    return layer.msg('上传失败');
+                }else {
+                    console.log(res);
+                    $('#hiddenImg').val(res.data);
+                }
+            },error: function(){
+
+            }
+        });
+        form.on('submit(submit)',function (d) {
+            var data = {
+                productName : d.field.productName,
+                productDescription : d.field.productDescription,
+                productPrice : d.field.productPrice,
+                productStock : d.field.productStock,
+                categoryType : $("input[name='rname']:checked").val(),
+            };
+            console.log(data);
+            $.ajax({
+                type: "POST",
+                url: "/addProduct",
+                data: data,
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    if (data.code == 200) {
+                        layer.msg("添加成功")
+                        setTimeout(function () {},2000);
+                    } else {
+                        layer.msg("添加失败")
+                    }
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

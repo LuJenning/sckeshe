@@ -8,6 +8,11 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
+  <select id="findCategoryList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from product_category
+  </select>
   <sql id="Base_Column_List">
     category_id, category_name, category_type, create_time, update_time
   </sql>

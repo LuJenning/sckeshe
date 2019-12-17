@@ -2,6 +2,7 @@ package com.user.client.ljn.userfeign;
 
 import com.base.ljn.dto.ProductDTO;
 import com.user.common.usercommon.entity.SysProductInfo;
+import com.user.server.ljn.entity.SysProductCategoryInfo;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,4 +22,10 @@ public interface UserFeign {
 
     @RequestMapping(value = "/product/productInfo",method = RequestMethod.GET)
     SysProductInfo getProductInfoNyProductId(@RequestParam("id") String id);
+
+    @RequestMapping(value = "/addProduct",method = RequestMethod.POST)
+    int addProduct(@RequestBody SysProductInfo sysProductInfo);
+
+    @RequestMapping(value = "/getCategory",method = RequestMethod.POST)
+    List<SysProductCategoryInfo> findCategoryList();
 }

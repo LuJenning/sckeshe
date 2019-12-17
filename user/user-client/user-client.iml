@@ -25,6 +25,15 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="base" />
+    <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.1.8.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:3.2.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.1.9.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.3" level="project" />
+    <orderEntry type="module" module-name="order-base" />
     <orderEntry type="module" module-name="user-common" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.1.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.1.8.RELEASE" level="project" />
@@ -44,15 +53,6 @@
     <orderEntry type="library" name="Maven: org.unbescape:unbescape:1.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.28" level="project" />
     <orderEntry type="library" name="Maven: org.thymeleaf.extras:thymeleaf-extras-java8time:3.0.4.RELEASE" level="project" />
-    <orderEntry type="module" module-name="base" />
-    <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.1.8.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:3.2.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:5.1.9.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.3" level="project" />
-    <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:2.0.3" level="project" />
-    <orderEntry type="module" module-name="order-base" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.8" level="project" />
     <orderEntry type="module" module-name="user-server" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.30" level="project" />

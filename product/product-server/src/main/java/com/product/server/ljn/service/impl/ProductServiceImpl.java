@@ -41,4 +41,9 @@ public class ProductServiceImpl implements IProductService {
         return mapper.findProductByProductId(productId);
     }
 
+    @Override
+    public int addProduct(SysProductInfo sysProductInfo) {
+        return mapper.insert(sysProductInfo);
+    }
+
 }

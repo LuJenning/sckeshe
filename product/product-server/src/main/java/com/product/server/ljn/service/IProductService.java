@@ -16,4 +16,6 @@ public interface IProductService {
     int selectStockByProductId(String productId);
 
     SysProductInfo getProductInfoNyProductId(String productId);
+
+    int addProduct(SysProductInfo sysProductInfo);
 }
