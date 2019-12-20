@@ -24,6 +24,7 @@
         <option value="$PROJECT_DIR$/sleuth-zipkin/pom.xml" />
         <option value="$PROJECT_DIR$/user/user-base/pom.xml" />
         <option value="$PROJECT_DIR$/user/user-common/pom.xml" />
+        <option value="$PROJECT_DIR$/admin-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

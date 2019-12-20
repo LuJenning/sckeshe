@@ -1,0 +1,8 @@
+version: '2'
+services:
+  user-client:
+    restart: always
+    image: user-client
+    container_name: user-client
+    ports:
+      - 8030:8030

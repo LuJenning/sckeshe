@@ -12,6 +12,11 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
+  <select id="findOrderDetail" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from order_detail
+  </select>
   <insert id="save" parameterType="com.order.base.ljn.entity.SysOrderDetail">
     insert into order_detail (detail_id, order_id, product_id,
       product_name, product_price, product_quantity

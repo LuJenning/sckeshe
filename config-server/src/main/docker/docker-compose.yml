@@ -6,3 +6,6 @@ services:
     container_name: config-server
     ports:
       - 8974:8974
+networks:
+  eureka-net:
+    driver: bridge

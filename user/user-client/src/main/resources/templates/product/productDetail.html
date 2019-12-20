@@ -85,9 +85,7 @@
                     console.log(data);
                     if (data.code == 200) {
                         layer.msg("下单成功")
-                        setTimeout(function () {},2000);
-
-                        //window.location.reload();
+                        layer.closeAll();
                     } else {
                         layer.msg("下单失败")
                     }

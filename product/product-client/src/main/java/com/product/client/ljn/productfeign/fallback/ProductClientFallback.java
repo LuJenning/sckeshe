@@ -1,7 +1,7 @@
 package com.product.client.ljn.productfeign.fallback;
 
-import com.base.ljn.dto.BuyProductDTO;
-import com.base.ljn.dto.ProductDTO;
+import com.product.base.ljn.entity.BuyProductDTO;
+import com.product.base.ljn.entity.ProductDTO;
 import com.product.client.ljn.productfeign.feign.ProductClient;
 import com.user.common.usercommon.entity.SysProductInfo;
 import lombok.extern.slf4j.Slf4j;
@@ -28,4 +28,6 @@ public class ProductClientFallback implements ProductClient {
     public void decreaseStock(ProductDTO productDTO) {
         log.info("服务器开小差....");
     }
+
+
 }

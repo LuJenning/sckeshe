@@ -1,6 +1,6 @@
 package com.product.server.ljn.controller;
 
-import com.base.ljn.dto.ProductDTO;
+import com.product.base.ljn.entity.ProductDTO;
 import com.product.base.ljn.entity.SysProductCategoryInfo;
 import com.product.server.ljn.service.ICategoryService;
 import com.product.server.ljn.service.IProductService;

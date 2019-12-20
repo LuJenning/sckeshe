@@ -11,7 +11,6 @@
     <groupId>com.sckeshe.base.ljn</groupId>
     <artifactId>base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>base</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -24,7 +23,7 @@
             <version>2.1.1</version>
         </dependency>
         <dependency>
-            <groupId>com.order.ljn</groupId>
+            <groupId>com.order.base.ljn</groupId>
             <artifactId>order-base</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
@@ -44,4 +43,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>

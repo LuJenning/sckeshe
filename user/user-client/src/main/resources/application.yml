@@ -23,6 +23,7 @@ mybatis:
   type-aliases-package: com.user.common.usercommon.entity
 server:
   port: 9090
+  connection-timeout: 18000000
 #hystrix的超时时间
 hystrix:
   command:

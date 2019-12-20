@@ -3,7 +3,6 @@ package com.product.server.ljn.dao;
 import com.product.base.ljn.entity.SysProductCategoryInfo;
 
 import java.util.List;
-
 public interface SysProductCategoryInfoMapper {
     int deleteByPrimaryKey(Integer categoryId);
 

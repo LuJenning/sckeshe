@@ -1,0 +1,8 @@
+version: '2'
+services:
+  turbine:
+    restart: always
+    image: turbine
+    container_name: turbine
+    ports:
+      - 8040:8040

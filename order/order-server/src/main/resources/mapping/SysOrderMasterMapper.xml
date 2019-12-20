@@ -6,7 +6,7 @@
     <result column="buyer_name" jdbcType="VARCHAR" property="buyerName" />
     <result column="buyer_phone" jdbcType="VARCHAR" property="buyerPhone" />
     <result column="buyer_address" jdbcType="VARCHAR" property="buyerAddress" />
-    <result column="buyer_openid" jdbcType="VARCHAR" property="buyerOpenid" />
+    <result column="buyer_id" jdbcType="VARCHAR" property="buyerOpenid" />
     <result column="order_amount" jdbcType="DECIMAL" property="orderAmount" />
     <result column="order_status" jdbcType="TINYINT" property="orderStatus" />
     <result column="pay_status" jdbcType="TINYINT" property="payStatus" />
@@ -14,17 +14,12 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
   </resultMap>
   <insert id="saveMaster" parameterType="com.order.base.ljn.entity.SysOrderMaster">
-    insert into order_master (order_id,
-    order_amount,
-      order_status,
-       pay_status)
-    values (#{orderId,jdbcType=VARCHAR},
-     #{orderAmount,jdbcType=DECIMAL},
-      #{orderStatus,jdbcType=TINYINT},
-       #{payStatus,jdbcType=TINYINT})
+    insert into order_master (order_id,buyer_id,order_amount,order_status,pay_status)
+    values (#{orderId,jdbcType=VARCHAR},#{buyerId,jdbcType=VARCHAR},#{orderAmount,jdbcType=DECIMAL},
+      #{orderStatus,jdbcType=TINYINT},#{payStatus,jdbcType=TINYINT})
   </insert>
   <sql id="Base_Column_List">
-    order_id, buyer_name, buyer_phone, buyer_address, buyer_openid, order_amount, order_status, 
+    order_id, buyer_name, buyer_phone, buyer_address, buyer_id, order_amount, order_status,
     pay_status, create_time, update_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -39,11 +34,11 @@
   </delete>
   <insert id="insert" parameterType="com.order.base.ljn.entity.SysOrderMaster">
     insert into order_master (order_id, buyer_name, buyer_phone, 
-      buyer_address, buyer_openid, order_amount, 
+      buyer_address, buyer_id, order_amount,
       order_status, pay_status, create_time, 
       update_time)
     values (#{orderId,jdbcType=VARCHAR}, #{buyerName,jdbcType=VARCHAR}, #{buyerPhone,jdbcType=VARCHAR}, 
-      #{buyerAddress,jdbcType=VARCHAR}, #{buyerOpenid,jdbcType=VARCHAR}, #{orderAmount,jdbcType=DECIMAL}, 
+      #{buyerAddress,jdbcType=VARCHAR}, #{buyerId,jdbcType=VARCHAR}, #{orderAmount,jdbcType=DECIMAL},
       #{orderStatus,jdbcType=TINYINT}, #{payStatus,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
@@ -63,7 +58,7 @@
         buyer_address,
       </if>
       <if test="buyerOpenid != null">
-        buyer_openid,
+        buyer_id,
       </if>
       <if test="orderAmount != null">
         order_amount,
@@ -95,7 +90,7 @@
         #{buyerAddress,jdbcType=VARCHAR},
       </if>
       <if test="buyerOpenid != null">
-        #{buyerOpenid,jdbcType=VARCHAR},
+        #{buyerId,jdbcType=VARCHAR},
       </if>
       <if test="orderAmount != null">
         #{orderAmount,jdbcType=DECIMAL},
@@ -127,7 +122,7 @@
         buyer_address = #{buyerAddress,jdbcType=VARCHAR},
       </if>
       <if test="buyerOpenid != null">
-        buyer_openid = #{buyerOpenid,jdbcType=VARCHAR},
+        buyer_id = #{buyerId,jdbcType=VARCHAR},
       </if>
       <if test="orderAmount != null">
         order_amount = #{orderAmount,jdbcType=DECIMAL},
@@ -152,7 +147,7 @@
     set buyer_name = #{buyerName,jdbcType=VARCHAR},
       buyer_phone = #{buyerPhone,jdbcType=VARCHAR},
       buyer_address = #{buyerAddress,jdbcType=VARCHAR},
-      buyer_openid = #{buyerOpenid,jdbcType=VARCHAR},
+      buyer_id = #{buyerId,jdbcType=VARCHAR},
       order_amount = #{orderAmount,jdbcType=DECIMAL},
       order_status = #{orderStatus,jdbcType=TINYINT},
       pay_status = #{payStatus,jdbcType=TINYINT},

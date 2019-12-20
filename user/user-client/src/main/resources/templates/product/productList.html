@@ -49,7 +49,7 @@
                 <td th:text="${sys.productPrice}"></td>
                 <td th:text="${sys.productDescription}"></td>
                 <td th:text="${sys.productStock}"></td>
-                <td><a href="javascript:;" id="buy" class="toBuy" th:name="${sys.productName}" th:foole="${sys.productId}">买它</a></td>
+                <td><a href="javascript:;" id="buy" class="toBuy" th:name="${sys.productName}" th:foole="${sys.productId}">购买</a></td>
             </tr>
         </table>
     </div>
@@ -72,34 +72,5 @@
             });
         });
     });
-
-
-
-    /*layer.prompt({title: name + '请输入购买数量，并确认'}, function(text, index){
-        layer.close(index);
-        console.log(foole)
-        setTimeout(function () {
-            layer.msg("正在处理，请稍后...")
-        },1500);
-        $.ajax({
-            type: "POST",
-            url: "http://localhost:9092/create/order",
-            data: {
-                productId: foole,
-                productNum: text
-            },
-            dataType: "json",
-            success: function (data) {
-                console.log(data);
-                if (data.code == 200) {
-                    layer.msg("下单成功")
-                    setTimeout(function () {},2000);
-                    window.location.reload();
-                } else {
-                    layer.msg("下单失败")
-                }
-            }
-        })
-    });*/
 </script>
 </html>

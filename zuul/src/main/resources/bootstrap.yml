@@ -1,32 +1,15 @@
 spring:
-  application:
-    name: zuul
   cloud:
     config:
-      discovery:
-        enabled: true
-        service-id: CONFIG
-      profile: dev
+      uri: http://jnick.xyz:8974
+      name: zuul
+      label: master
+      profile: prod
+ #     discovery:
+  #      enable: true
+  #      service-id: config-server
+
 eureka:
   client:
     service-url:
       defaultZone: http://jnick.xyz:8761/eureka/,http://jnick.xyz:8762/eureka/,http://jnick.xyz:8763/eureka/
-zuul:
-  routes:
-    routeOne:
-      path: /order/**
-      serviceId: scorder
-      sensitiveHeaders:
-  ignored-patterns:
-    - /**/product/listForOrder
-    routeTwo:
-      path: /product/**
-      serviceId: scproduct
-    routeThree:
-      path: /user-client/**
-      serviceId: user-client
-management:
-  security:
-    enabled: false
-server:
-  port: 8090

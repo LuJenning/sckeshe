@@ -1,0 +1,8 @@
+version: '2'
+services:
+  zuul:
+    restart: always
+    image: zuul
+    container_name: zuul
+    ports:
+      - 8090:8090

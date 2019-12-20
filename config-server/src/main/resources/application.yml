@@ -1,19 +1,23 @@
+server:
+  port: 8974
 spring:
   application:
     name: config-server
   boot:
     admin:
       client:
-        url: http://jnick.xyz:8761:8084
+        url: http://jnick.xyz:9004
   cloud:
     config:
       server:
         git:
           uri: https://gitee.com/TechLjn/spring-config-repo
+          label: master
           username: 2376571392@qq.com
           password: 6Ljn19970928
+          search-paths: spring-config-repo
   zipkin:
-    base-url: http://jnick.xyz:8761:9411
+    base-url: http://jnick.xyz:9411
 eureka:
   client:
     service-url:
@@ -25,5 +29,4 @@ management:
   endpoint:
     health:
       show-details: always
-server:
-  port: 8974
+

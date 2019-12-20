@@ -1,0 +1,14 @@
+version: '2'
+services:
+  user-client:
+    restart: always
+    image: user-client
+    container_name: user-client
+    networks:
+      - eureka-net
+    ports:
+      - 9090:9090
+
+networks:
+  eureka-net:
+    driver: bridge

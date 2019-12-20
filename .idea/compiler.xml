@@ -6,15 +6,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="user-common" />
         <module name="config-server" />
-        <module name="user" />
         <module name="turbine" />
         <module name="user-client" />
         <module name="order-client" />
         <module name="product-base" />
-        <module name="product" />
         <module name="product-client" />
         <module name="zuul" />
+        <module name="admin-server" />
         <module name="order-base" />
         <module name="order-server" />
         <module name="user-server" />
@@ -25,6 +25,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="admin-server" target="1.8" />
       <module name="base" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
@@ -52,7 +53,8 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="base" options="" />
+      <module name="admin-server" options="-parameters" />
+      <module name="base" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
       <module name="hystrix-dashboard" options="-parameters" />

@@ -1,9 +1,7 @@
 package com.base.ljn.dto;
 
 import lombok.Data;
-
 import java.io.Serializable;
-import java.math.BigInteger;
 
 @Data
 public class ProductDTO implements Serializable {

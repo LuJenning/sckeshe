@@ -1,0 +1,8 @@
+version: '2'
+services:
+  order:
+    restart: always
+    image: order
+    container_name: order
+    ports:
+      - 9092:9092

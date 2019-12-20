@@ -1,0 +1,8 @@
+version: '2'
+services:
+  product:
+    restart: always
+    image: product
+    container_name: product
+    ports:
+      - 9091:9091
