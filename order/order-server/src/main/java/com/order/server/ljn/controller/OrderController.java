@@ -55,6 +55,27 @@ public class OrderController {
         return orderService.findOrderDetail();
     }
 
+
+
+    @RequestMapping(value = "/toCreateOrder",method = RequestMethod.POST)
+    @HystrixCommand(fallbackMethod = "error")
+    public ResponseEntity<ProductDTO> toCreateOrder(@RequestBody ProductDTO productDTO,HttpServletRequest req){
+        log.info("productDTO:{}",productDTO);
+        Map<Object,Object> map = new HashMap<>();
+        if(StringUtils.isNotEmpty(productDTO.getProductId()) || productDTO.getProductNum() != null){
+            SysOrderMaster sysOrderMaster =  orderService.create(productDTO,req);
+            map.put("code",200);
+            map.put("信息","下单成功");
+            map.put("订单号",sysOrderMaster.getOrderId());
+            return new ResponseEntity(map, HttpStatus.OK);
+        }else{
+            map.put("code",400);
+            map.put("信息","下单失败");
+        }
+        return new ResponseEntity(map, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
     public String error(){
         return  "There was a error !!!";
     }

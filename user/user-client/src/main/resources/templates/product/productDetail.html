@@ -46,7 +46,7 @@
             （<span>库存量:</span><span th:text="${sysProductInfo.productStock}"></span>）
         </div>
         <div>
-            <button type="button" id="buy" class="layui-btn layui-btn-primary">立即购买</button>
+            <button type="button" id="buy" class="layui-btn layui-btn-normal">立即购买</button>
             <button type="button" class="layui-btn layui-btn-danger">加入购物车</button>
         </div>
     </div>
@@ -67,15 +67,23 @@
             });
         });
     });
+    var index = parent.layer.getFrameIndex(window.name);
     $('#buy').on('click',function () {
         var productNum = $('#inp').val();
         var productId = $("input:hidden[name = 'hiddenVal']").val();
         if(productNum == '0' || productNum == ''){
-            layer.alert('商品数量不能为空，请重新选择')
+            layer.alert('商品数量不能为空，请重新选择');
         }else{
+            layer.msg('正在下订单,请稍后...');
+            setTimeout(function () {
+                createOrder();
+            },2500);
+        }
+        function createOrder() {
             $.ajax({
                 type: "POST",
                 url: "http://localhost:9092/create/order",
+                //url: "/create/order",
                 data: {
                     productId: productId,
                     productNum: productNum
@@ -84,8 +92,11 @@
                 success: function (data) {
                     console.log(data);
                     if (data.code == 200) {
-                        layer.msg("下单成功")
-                        layer.closeAll();
+                        layer.msg("下单成功");
+                        setTimeout(function () {
+                            parent.layer.close(index);
+                        },2000);
+                        parent.location.reload();
                     } else {
                         layer.msg("下单失败")
                     }
